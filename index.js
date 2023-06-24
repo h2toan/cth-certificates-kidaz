@@ -1,10 +1,5 @@
 import Express from "express";
-import path from "path";
-import { fileURLToPath } from "url";
 import BodyParser from "body-parser";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 const Server = new Express();
 
@@ -14,7 +9,7 @@ Server.use(BodyParser.urlencoded({ extended: false }));
 Server.get("/", (req, res) => {
   const emailaddress = req.query.emailaddress;
   const options = {
-    root: path.join(process.cwd()),
+    root: process.cwd(),
     dotfiles: "deny",
     headers: {
       "x-timestamp": Date.now(),
