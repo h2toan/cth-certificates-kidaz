@@ -12,10 +12,9 @@ Server.use(BodyParser.json());
 Server.use(BodyParser.urlencoded({ extended: false }));
 
 Server.get("/", (req, res) => {
-  console.log(process.cwd());
   const emailaddress = req.query.emailaddress;
   const options = {
-    root: path.join(__dirname),
+    root: path.join(process.cwd()),
     dotfiles: "deny",
     headers: {
       "x-timestamp": Date.now(),
