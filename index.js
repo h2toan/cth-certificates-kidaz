@@ -3,8 +3,6 @@ import BodyParser from "body-parser";
 import path from "path";
 
 const Server = new Express();
-
-Server.use(BodyParser.json());
 Server.use(BodyParser.urlencoded({ extended: false }));
 
 Server.get("/", (req, res) => {
