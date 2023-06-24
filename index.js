@@ -1,5 +1,6 @@
 import Express from "express";
 import BodyParser from "body-parser";
+import path from "path";
 
 const Server = new Express();
 
@@ -9,7 +10,7 @@ Server.use(BodyParser.urlencoded({ extended: false }));
 Server.get("/", (req, res) => {
   const emailaddress = req.query.emailaddress;
   const options = {
-    root: process.cwd(),
+    root: path.join(process.cwd(), "certificates"),
     dotfiles: "deny",
     headers: {
       "x-timestamp": Date.now(),
