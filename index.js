@@ -415,7 +415,7 @@ const emailListRoute2 = {
     "https://drive.google.com/uc?export=download&id=18tYnuWk42XEAB_-GcKGRoh4XoYlgtGQA",
 };
 
-Server.get("/route1", (req, res) => {
+Server.get("/", (req, res) => {
   const emailaddress = req.query.emailaddress;
   res.redirect(301, emailListRoute1[emailaddress]);
 });
