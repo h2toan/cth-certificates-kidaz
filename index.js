@@ -5,25 +5,230 @@ import path from "path";
 const Server = new Express();
 Server.use(BodyParser.urlencoded({ extended: false }));
 
+const top20Emailpart1 = {
+  "cuonglpd@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1uWzcPC_zcKzqnqgUxQxdTPyAqCTqBZ6Q",
+  "trinhbichhao@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1jAD82JVL7YNfx0xYlS8aE8XlYLw5kTpX",
+  "phuongct1092@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1t4i5Sg-yA8HULXtbipLrrfeihoZtPeom",
+  "vuduongtruongxuan@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1dJ7CulYPDyDFiVVY6v0x4wIi6Ak53v8S",
+  "maybelle146@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1gFT4IgiIlIWPhNxv5ds3vSiU61Mt5DSv",
+  "phuonglanxn@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1AiQwB2IFMQMekg2N-VnV5t7cUnHJ8IxE",
+  "nguyentheu1603@gmail.com":
+    "https://drive.google.com/uc?export=download&id=16_KNrk2VWc0nTncmWuUcbKWfh9XaDfRP",
+  "hacame192@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1ZVEUuQTyKxPVeo2ZrxFpzUa1u8H_IL-D",
+  "camhang192@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1sp63ntcYqgGqpgSuzHIhlPrUO9_d6l_U",
+  "lagio2609@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1SNAu9FCxmF5TnE8QDTn-m4Qttob2zPST",
+  "nguyenthuyngocvn@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1diEPXAoXfo5a-_RrlzIJRFl7cDWGZJ-q",
+  "ntnquynh90@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1rCR61dXsFJPIOXawbyroahdoqc0RyvNJ",
+  "kimngana9@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1SqsQV7x8TnMI7HpJgsebvYfMFEBqMVUW",
+  "nguyenthientb@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1hQjzX-GZLvdtAhDsOCYdZXGamI4_yxdI",
+  "dokieulien@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1wN9xD9RWWHY_nGofBR3E5BvH9GqFKGuk",
+  "songnguyentrung@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1rQNthlp4_A8NrhZlwbqrIg0sCGU61yID",
+  "minhthu.lion88@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1GI3YUs1k6CqxvvU6vDg9JoEDHOM0S_Do",
+  "mainq@prime.vn":
+    "https://drive.google.com/uc?export=download&id=1FLa9lYHFK8FsuBR1NkUvyfp2rD_23FJL",
+  "mr.minhbap@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1IGoV3VFniwt-bC1Kj-fhmCIkiMykW7-4",
+  "tam.trinh1983@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1fjOoflpuKxCgDPg0NniSJdE2F3HpQLne",
+  "hientit04@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1vovNik4wJ52uV42zKPRE_uJ4GTmbaecM",
+  "len.nguyenthi@wellspring.edu.vn":
+    "https://drive.google.com/uc?export=download&id=1rIzADy_cDx6ssIiWf03w3Pl-mjlOjw2P",
+  "thuymuikt29@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1OCOmAYKTNm8hTGA_n3JArLiDMpJOm1pO",
+  "hoatuyetgiabang17@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1dZT-IQ7Z62Ujbl8-kS5VF32G_zvMkq5w",
+  "dohang@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1EbhHNyoiZFs1p3iiEYvs5xoBz_jF-d2W",
+  "elistran.sh@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1mqwby4Muy0w0EeFHuSKNwYtUjH8bn5pr",
+  "nguyenhuong020683@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1fc5J4jEW227DBRWKjP7EXnA9vrsd_fTR",
+  "thuyvudhtb@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1izxFzGmLA-7bwgho7kquRJC8RYtcXOKc",
+  "tuyet.vu0808@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1vCpcOCbA2Fb9BTHUmWQJfAIe4RPyr9Um",
+  "quangthang13ngs@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1f6zp90Icq8t2hMgGTQ4hG7_4SxuS2rhz",
+  "quynhtram201511@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1uS0rOUN5jHZ0UFBhItw2L4gk_KtVfJrq",
+  "thyennhi11189@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1iILl7n142DLR5EwiwfANvUfcuBBseNBu",
+  "ngocnb85@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1_0ZFL6aZMe52OyhTIFuAfMwPmMOSOL1m",
+  "Hangntt.bdh@vietcombank.com.vn":
+    "https://drive.google.com/uc?export=download&id=1_iyMIwQeM9nVb8Xq4xSDp5mKe-BcSPWb",
+  "tranngoc120992@gmail.com":
+    "https://drive.google.com/uc?export=download&id=14v2eKCt_FVtoJdd9QniOJfqzmwuXkcMY",
+  "lttmai152@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1c_-Wu3zo548RS47ioJGzdPtUQnaj6dPb",
+  "tranlenuhong@icloud.com":
+    "https://drive.google.com/uc?export=download&id=1vdOAS0loxNW3khkAvdEinJCYS4VrwYa4",
+  "tranmo2529@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1CSbOpuYYA-m0gDHLWzd1HXzuBKxyGD1F",
+  "minhkhue.vu23@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1ZdYtfolhvYt-IHpIGREt-8Uj_BsN99lT",
+  "quenn@hau.edu.vn":
+    "https://drive.google.com/uc?export=download&id=1AgtejVsohD6Df5mh4lol_hwTKFoar7yq",
+  "haianhdinh1807@gmail.com":
+    "https://drive.google.com/uc?export=download&id=150q3OXDFKnrEKcik4lgsROYeZIvlbiFF",
+  "cuongdm81@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1WpxzP8jD0b0m7sPPgFQRyWs4dcFMoyDY",
+  "phuongthynth@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1QZ1mzeNT7GfHyUiJ70zC0Zlryrkz4_Cq",
+  "vuphongxdhn@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1iMcFoipJQBntrBE_Za84pOKMEfKLPdkU",
+  "xhoneystarx@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1NHUuo1uGcHw2TPm3V6GeDQvi0J4zSv9O",
+  "nguyenthithaohvu@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1pn4CyD1SPoOAO7AF2nGpZqqEqrQHZwgL",
+  "hang.tuyetson@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1efuY_X0Eod68t7Td_jYKwZ9WzBcvQr-Z",
+  "duc.uce@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1fZ7-pDUBljgmKfxAnN3iI2cIT_-JjfHP",
+  "thuyhuyen.tc@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1nvaRfJuhCdVAZPbUUcyezjpkrOcvf_Q_",
+  "havang2811@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1HjNeYNc2hbOoV35TQ7ZMH0B3_zv86iqt",
+  "quyenqtm@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1RTUgZYB0T15nKtZgmG0nI8AqW74P58zl",
+  "haiyenpt136@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1TfEGiaX1SlY-okUJgh4G28zXotWMdvvC",
+  "viet.hungthinh@yahoo.com.vn":
+    "https://drive.google.com/uc?export=download&id=15ofb0P9VYxTa6cj98Svap1U2jRcvM8Uw",
+  "kingprovietnam@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1vGmlgxihJS03FFIGw688ReDJCgQcz91S",
+  "cocavu2014@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1QnXMWtq1TuBy1qMGUmd79KDEbWXj87Gi",
+  "buungan.huynh@gmail.com":
+    "https://drive.google.com/uc?export=download&id=10yewk-RrovynefxOB6l3Z_5-FWjNqlud",
+  "hathu86almus@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1XHBZLru6ooMgtGvGCO24VoE-e1uYiDN_",
+  "84thudung.le@gmail.com":
+    "https://drive.google.com/uc?export=download&id=13SRUdfYDpyEeYRmZN4DvYOINFf2DDNsy",
+  "thutrang152585@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1TQwrSq9GMzCbb3XcfCXogEEpVoKow9Zp",
+  "vanthuha.yhct@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1f_nqdrhupu7KEW_Av_nkmVidptErEeJV",
+  "tranluyen.hkht@gmail.com":
+    "https://drive.google.com/uc?export=download&id=14ZqtQCieT-LkFzAnYf9rt8gvmf6QC2hl",
+  "thuhienqtb@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1RwbpDT5DpKQgzYTmNv109gu9Ib8YudbJ",
+  "dieuthuy84@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1FmAL3XkYsZ4K-khZ3XHPfTgyZvgWBEa8",
+  "hienthu187@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1sQ_zfuAwAyW19P-kWhiTGDZOl8frsVd4",
+  "nhhung2013@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1E8b0YbT-lud5NvEHjNaDwWazmV5u1eSo",
+  "vova_vovin@yahoo.com":
+    "https://drive.google.com/uc?export=download&id=1iFx3DF_5cGAYGkAOYRns4hCsSF-9PFpg",
+  "nguyenmai161188@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1__0HhEObOTGNJuvWjHroeH0DIo39GTcz",
+  "lizi225@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1cLoD_4LZ1n_GDfXUYliHOiAzz8RiiQHt",
+  "lanphuong2305@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1qxc13nVTowhQM-KohdOwcHP_lKXDvCJt",
+  "huyenthuong88vnu@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1eTZfayAKWjCh4n94nqEYeCdA_071hLvn",
+  "quynhgiangnhatanh@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1gEBXt03r7KmsP2FnVsaG3TJRuhCNh4aS",
+  "mailinh254@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1qsAtxxQjFk1DxPMGouCiVizneHktmVjy",
+  "nguyenhang1418@gmail.com":
+    "https://drive.google.com/uc?export=download&id=18lE76SjEic57usX1FoZE3npvcfUkaPhZ",
+  "thuytienanhngoc@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1c7HjJRzxCTo2oYvGdagoyBJD6R1PNSCp",
+  "linhpt2710@gmail.com":
+    "https://drive.google.com/uc?export=download&id=19Qr1GeZBhy2Qy6TYV3xRFCNS7zulrsWZ",
+  "linhnguyendieulinh@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1npmZObcVxuxnd46XlQRdKlF4km2-IWES",
+  "quanthaochi@gmail.com":
+    "https://drive.google.com/uc?export=download&id=18L1duLxAnT_8RxrdH-5R73vPSwRL1J4Z",
+  "thinhbk@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1S0qTDP6O8RylKqDpk7sZa0oT55ShUr5n",
+  "vancongnghia@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1gqIznK1BZiHft3qjf6EXZc1zUA_K7Elr",
+  "cookiemeomeo03@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1LMkwz3X0XlpSGjdAnGBtnrUlCgzT5fwc",
+  "hoaihm15@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1biTN509Ntw6AxhGKDSAYJAwcOhyxB2yO",
+  "huonganna90@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1g4C4TrzicBUP-VVYyWxa-hK4vFyWrYML",
+  "huongaovnua@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1837ZI5-ZTN2Eq7UhjvKTS5B7--CVe7QT",
+  "phuongntt3010@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1kNNB4VZ20vkoMqLA0n3i5y5jkt1ESihU",
+  "bismiling@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1vNowglJzIporIHaFtdA8pFJ4yBBoTk1c",
+  "nguyenthuthuy.176@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1KRItmyZP3IOlFi6Q46i6w0XYCoRqK1KV",
+  "linhnd1411@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1TIKCbh8f4F8VX5DWeBCap5L09cUhQdO6",
+  "tranghm85@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1Hiji0naiczaDuvlgyExWzDveIkywcMdC",
+  "vfa.uyenptv@gmail.com":
+    "https://drive.google.com/uc?export=download&id=11F4uYorfeo2rEigJu8obxc5cltiOb4n4",
+  "baoyen.hanetjsc@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1DAskdY5KbvrnevLUubL4Rv-4df-uj4Ba",
+  "minhkhue.vu@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1TPkTrrbyf6LfyHTcpKN3YWcQKIc5Q06r",
+  "plquyen@misa.com.vn":
+    "https://drive.google.com/uc?export=download&id=1_rkBFLHDE90IXk6F9GMJUd7dq6hfVgK7",
+  "bichngocdt.psy@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1LRZI6DkDKUcFdmZ11Cq-4TQAPKmKjOjo",
+  "nqmai1612@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1qTWu7hYk0v5oUj0d9O8kyli4pp5ReZWQ",
+  "thuha1384@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1jrEYCzYmfIL6kinIIudMDNgmcgjYRxS1",
+  "nguyenhuonggiang1709@gmail.com":
+    "https://drive.google.com/uc?export=download&id=12VmfMGtNayHWErLO1UyYx2AoNATQWz_p",
+  "huonggiang.ftu47@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1AlaQB4SEOt98EXqkm415Kq2-6d4ZZG0h",
+  "lethu88hp@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1pkdrXNvIxsFVBq6c0UTiwXFLRThyNaoB",
+  "ngoc.ftu22@icloud.com":
+    "https://drive.google.com/uc?export=download&id=1aSY9-7LpEW6rC9VjyWdShEjsGFmD_8Dr",
+  "nguyentien4291@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1uP1J-B-weU8MhVPTr2zKGgMtOPMqUXSs",
+  "hoaihm15@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1bcrX9ADJ0w_TQGHRs5ryz_W7yD_OEH6m",
+  "huonganna90@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1t-B2MSq1YeKIJIYDHEF03z-b2oQeAy7h",
+  "trinhbichhao@gmail.com":
+    "https://drive.google.com/uc?export=download&id=18goOsb5QQU3OHQr6sGtA75t1kHb9GZQl",
+  "thinhbk@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1WlyaqHaOady99tWyW2NaLqhaLHY1uSFv",
+  "elistran.sh@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1QfL814lx_u7HcRSG9zxfUenfWeMxMcvU",
+  "huongaovnua@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1IXyomKtx3R7P4mumfuP2abZAswLN_Xb-",
+  "nguyenhang1418@gmail.com":
+    "https://drive.google.com/uc?export=download&id=140-5VHyfiAFq9t1fcIRLipROHrujDxwi",
+  "tuyet.vu0808@gmail.com":
+    "https://drive.google.com/uc?export=download&id=15h-jyiJQDRBcgaCfQux_lmAbZq6lbpYS",
+  "cuonglpd@gmail.com":
+    "https://drive.google.com/uc?export=download&id=1HUUEy7pjOLAX0SdLUsCu45QEUjSrX8_i",
+};
+
 Server.get("/", (req, res) => {
   const emailaddress = req.query.emailaddress;
-  const options = {
-    root: path.join(process.cwd(), "certificates"),
-    dotfiles: "deny",
-    headers: {
-      "x-timestamp": Date.now(),
-      "x-sent": true,
-    },
-  };
-  const fileName = emailaddress + ".pdf";
-  res.sendFile(fileName, options, (err) => {
-    if (err) {
-      console.log(err);
-      res.status(404).send();
-    } else {
-      console.log("Sent:", fileName);
-    }
-  });
+  res.redirect(301, top20Emailpart1[emailaddress]);
 });
 
 Server.listen(80, () => {
