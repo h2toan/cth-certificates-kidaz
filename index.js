@@ -199,6 +199,8 @@ const emailListRoute1 = {
     "https://drive.google.com/uc?export=download&id=1TIKCbh8f4F8VX5DWeBCap5L09cUhQdO6",
   "minhkhue.vu@gmail.com":
     "https://drive.google.com/uc?export=download&id=1TPkTrrbyf6LfyHTcpKN3YWcQKIc5Q06r",
+  "minhkhue.vu23@gmail.com.":
+    "https://drive.google.com/uc?export=download&id=1TPkTrrbyf6LfyHTcpKN3YWcQKIc5Q06r",
   "thutrang152585@gmail.com":
     "https://drive.google.com/uc?export=download&id=1TQwrSq9GMzCbb3XcfCXogEEpVoKow9Zp",
   "nguyentien4291@gmail.com":
@@ -420,9 +422,9 @@ Server.get("/", (req, res) => {
   res.redirect(301, emailListRoute1[emailaddress]);
 });
 
-Server.get("/route2", (req, res) => {
+Server.get("/2", (req, res) => {
   const emailaddress = req.query.emailaddress;
-  res.send(JSON.stringify(req.query));
+  res.redirect(301, emailListRoute2[emailaddress]);
 });
 
 Server.listen(80, () => {
