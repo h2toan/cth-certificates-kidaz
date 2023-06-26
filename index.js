@@ -422,6 +422,7 @@ Server.get("/", (req, res) => {
 
 Server.get("/2", (req, res) => {
   const emailaddress = req.query.emailaddress;
+  console.log(emailaddress);
   res.redirect(301, emailListRoute2[emailaddress]);
 });
 
